@@ -34,7 +34,9 @@ public class M2798 {
 			}
 		}
 		
-		System.out.println(max);
+		bw.write(String.valueOf(max));
+		bw.flush();
+		bw.close();
 	}
 
 }
