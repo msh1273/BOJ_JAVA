@@ -20,15 +20,12 @@ public class M11650 {
 				arr[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		Arrays.sort(arr, new Comparator<int[]>() {
-			@Override
-			public int compare(int[] a1, int[] a2) {
+		Arrays.sort(arr, (a1, a2)-> {
 				if(a1[0]==a2[0]) {
 					return a1[1]-a2[1];
 				}
 				else
 				return a1[0] - a2[0];
-			}
 		});
 		  for(int i=0; i<N; i++) { 
 			  for(int j=0; j<2; j++) { 
