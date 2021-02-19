@@ -14,10 +14,7 @@ public class M7568 {
 		
 		int N = Integer.parseInt(br.readLine());
 		int[][] arr = new int[N][2];
-		int[] rank = new int[N];
-		for(int i=0; i<rank.length; i++) {
-			rank[i] = 1;
-		}
+		
 		for(int i=0; i<N; i++) {
 			StringTokenizer sT = new StringTokenizer(br.readLine(), " ");
 
@@ -27,22 +24,18 @@ public class M7568 {
 		}
 		
 		for(int i=0; i<N; i++) {
-			for(int j=1; j<N; j++) {
-				if(arr[i][0] > arr[j][0] && arr[i][1] > arr[j][1]) {
-					rank[i] = 1;
-				}
-				else if(arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1]) {
-					rank[i] = N;
-				}
-				else {
-					rank[i]++;
+			int rank = 1;
+			for(int j=0; j<N; j++) {
+				if(i==j) continue;
+				if(arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1]) {
+					rank++;
 				}
 			}
+			bw.write(String.valueOf(rank) + " ");
+			bw.flush();
+			}
+		bw.close();
 
 		}
-		for(int i=0; i<N; i++) {
-			System.out.print(rank[i] + " ");
-		}
+
 	}
-
-}
