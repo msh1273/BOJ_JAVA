@@ -30,11 +30,13 @@ public class M1181 {
 				}
 			}
 		});
-		System.out.println(arr[0]);
+		bw.write(arr[0] + "\n");
 		for(int i=1; i<arr.length; i++) {
 			if(!arr[i-1].equals(arr[i]))
-			System.out.println(arr[i]);
+			bw.write(arr[i] + "\n");
 		}
+		bw.flush();
+		bw.close();
 	}
 
 }
