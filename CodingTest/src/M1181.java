@@ -1,18 +1,14 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashSet;
 
 public class M1181 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		int N = Integer.parseInt(br.readLine());
 		String[] arr = new String[N];
@@ -30,13 +26,14 @@ public class M1181 {
 				}
 			}
 		});
-		bw.write(arr[0] + "\n");
+		StringBuilder sb = new StringBuilder();
+
+		sb.append(arr[0]).append("\n");
 		for(int i=1; i<arr.length; i++) {
 			if(!arr[i-1].equals(arr[i]))
-			bw.write(arr[i] + "\n");
+			sb.append(arr[i]).append("\n");
 		}
-		bw.flush();
-		bw.close();
+		System.out.println(sb);
 	}
 
 }
