@@ -15,12 +15,10 @@ public class M1181 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		int N = Integer.parseInt(br.readLine());
-		HashSet<String> hs = new HashSet<>();
+		String[] arr = new String[N];
 		for(int i=0; i<N; i++) {
-			hs.add(br.readLine());
+			arr[i] = br.readLine();
 		}
-		String[] arr = new String[hs.size()];
-		hs.toArray(arr);
 		Arrays.sort(arr, new Comparator<String>() {
 			
 			public int compare(String a, String b) {
@@ -32,7 +30,9 @@ public class M1181 {
 				}
 			}
 		});
-		for(int i=0; i<hs.size(); i++) {
+		System.out.println(arr[0]);
+		for(int i=1; i<arr.length; i++) {
+			if(!arr[i-1].equals(arr[i]))
 			System.out.println(arr[i]);
 		}
 	}
